@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<p>
+    {{ myUrl }}
+</p>
+ 
+</div>
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope, $location){
+     $scope.myUrl = $location.absUrl();
+})
+</script>
+</body>
+</html>

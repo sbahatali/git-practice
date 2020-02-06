@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+<input type="text" name="firstName" ng-model="firstName">
+<p>
+    {{firstName | number }}
+</p>
+<p ng-repeat="info in infos | filter: 'Faraz'">
+    {{ info.name  }} <hr> 
+</p>
+</div>
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope){
+    $scope.infos = [
+        {name:"Khizar", city: "USA"},
+        {name:"Shehram", city: "PAK"},
+        {name:"Faraz", city: "Dubai"},
+        {name:"Aneeq", city: "Malaysia"}
+    ]
+})
+</script>
+</body>
+</html>
